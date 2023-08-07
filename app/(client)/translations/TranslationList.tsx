@@ -3,7 +3,7 @@ import { ArrowUpLeftIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 
 type Props = {
-  posts: Translation[];
+  translations: Translation[];
 };
 
 function TranslationList({ translations }: Props) {
