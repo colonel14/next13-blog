@@ -2,7 +2,7 @@ import { postquery, singlequery, singletranslationquery, translationsquery } fro
 import { client } from "./sanity.client";
 
 export async function getAllPosts() {
-  return (await client.fetch(postquery)) || [];
+  return (await client.fetch(postquery, { cache: 'no-store' })) || [];
 }
 
 export async function getPostBySlug(slug: string) {
@@ -11,7 +11,7 @@ export async function getPostBySlug(slug: string) {
 
 
 export async function getAllTranslations() {
-  return (await client.fetch(translationsquery)) || [];
+  return (await client.fetch(translationsquery, { cache: 'no-store' })) || [];
 }
 
 export async function getTranslationBySlug(slug: string) {
