@@ -25,13 +25,8 @@ export default defineType({
       type: "datetime",
     }),
     defineField({
-      name: "enText",
-      title: "English Text",
-      type: "blockContent",
-    }),
-    defineField({
-      name: "arText",
-      title: "Arabic Text",
+      name: "body",
+      title: "Body",
       type: "blockContent",
     }),
   ],

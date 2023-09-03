@@ -16,12 +16,12 @@ async function Post({ params: { slug } }: Props) {
     <article className="px-10 pb-28">
       <section className="space-y-2 border-t-2  border-yellow text-white">
         <div className="relative min-h-[30vh] ">
-        <Image
+          <Image
             className="object-cover object-center mx-auto"
             src="/translation-text.jpg"
             alt={translation.title}
             fill
-        />
+          />
         </div>
       </section>
       <section>
@@ -36,12 +36,11 @@ async function Post({ params: { slug } }: Props) {
           </p>
         </div>
       </section>
-      <div dir="ltr">
-        <PortableText value={translation.enText} components={RichTextComponents} />
-      </div>
-      <hr className="my-10"/>
-      <div className="text-right">
-        <PortableText value={translation.arText} components={RichTextComponents} />
+      <div>
+        <PortableText
+          value={translation.body}
+          components={RichTextComponents}
+        />
       </div>
     </article>
   );
