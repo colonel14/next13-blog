@@ -42,6 +42,7 @@ async function Post({ params: { slug } }: Props) {
           components={RichTextComponents}
         />
       </div>
+      {translation.table}
     </article>
   );
 }
