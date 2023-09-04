@@ -29,5 +29,10 @@ export default defineType({
       title: "Body",
       type: "blockContent",
     }),
+    defineField({
+      name: "table",
+      title: "table",
+      type: "table",
+    }),
   ],
 });
