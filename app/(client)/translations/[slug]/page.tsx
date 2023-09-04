@@ -11,7 +11,7 @@ type Props = {
 };
 async function Post({ params: { slug } }: Props) {
   const translation = await getTranslationBySlug(slug);
-
+  console.log(translation);
   return (
     <article className="px-10 pb-28">
       <section className="space-y-2 border-t-2  border-yellow text-white">
@@ -36,13 +36,29 @@ async function Post({ params: { slug } }: Props) {
           </p>
         </div>
       </section>
-      <div>
+      {/* <div>
         <PortableText
-          value={translation.body}
+          value={translation.table}
           components={RichTextComponents}
         />
+      </div> */}
+      <div className="mt-10">
+        {translation.table && (
+          <table>
+            <tbody>
+              {translation.table.rows.map((row: any, rowIndex: number) => (
+                <tr key={rowIndex}>
+                  {row.cells.map((cell: any, cellIndex: number) => (
+                    <td key={cellIndex} className="px-3 py-3 border">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
-      {translation.table}
     </article>
   );
 }
